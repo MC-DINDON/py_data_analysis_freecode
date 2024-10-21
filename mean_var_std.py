@@ -7,7 +7,15 @@ def calculate(lst):
         answer_list = []
         my_arr = np.array(lst)
         my_arr = np.reshape(my_arr, (3, 3))
-        #mean
+        myDict = {}
+        myDict["mean"] = [my_arr.mean(axis=0).tolist(), my_arr.mean(axis=1).tolist(),my_arr.mean().tolist()]
+        myDict["variance"] = [my_arr.var(axis=0).tolist(), my_arr.var(axis=1).tolist(),my_arr.var().tolist()]
+        myDict["standard deviation"] = [my_arr.std(axis=0).tolist(), my_arr.std(axis=1).tolist(),my_arr.std().tolist()]
+        myDict["max"] = [my_arr.max(axis=0).tolist(), my_arr.max(axis=1).tolist(),my_arr.max().tolist()]
+        myDict["min"] = [my_arr.min(axis=0).tolist(), my_arr.min(axis=1).tolist(),my_arr.min().tolist()]
+        myDict["sum"] = [my_arr.sum(axis=0).tolist(), my_arr.sum(axis=1).tolist(),my_arr.sum().tolist()]
+
+        """#mean
         mean_response = {}
         mean_response["axis1"] = my_arr.mean(axis=0)
         mean_response["axis2"] = my_arr.mean(axis=1)
@@ -38,7 +46,8 @@ def calculate(lst):
         sum_response["axis1"] = my_arr.sum(axis=0)
         sum_response["axis2"] = my_arr.sum(axis=1)
         sum_response["flattened"] = my_arr.sum()
-        print(sum_response)
+        print(sum_response)"""
         
-    return print("Done running")
+    return myDict
 #    return calculations
+
